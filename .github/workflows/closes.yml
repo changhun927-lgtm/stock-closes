@@ -1,0 +1,42 @@
+name: closes
+
+on:
+  schedule:
+    # 미국 장 마감 뒤 평일 3번 (UTC). 겨울 16:10·16:40·17:05 ET, 여름은 1시간씩 늦게.
+    - cron: "10 21 * * 1-5"
+    - cron: "40 21 * * 1-5"
+    - cron: "5 22 * * 1-5"
+  workflow_dispatch:
+  push:
+    paths:
+      - tickers.txt
+      - fetch.py
+      - .github/workflows/closes.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: closes
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "yfinance>=0.2.54" pandas requests
+      - run: python fetch.py
+      - name: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "closes $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase
+          git push

@@ -1,0 +1,28 @@
+# 한 줄에 한 종목 (Yahoo 기호). # 뒤는 메모.
+# 시장
+SPY
+^GSPC  # S&P 500 (시장 필터)
+^NDX   # 나스닥100 (손절 보류 조건)
+QQQM
+KRW=X  # 원/달러
+# 보유 (기존 정리 종목, 12/1 매도 예정)
+NVDA
+ORCL
+GOOGL
+AMZN
+# 후보 (11/24 기준 상위 15)
+HNGE
+FRO
+INSW
+OSCR
+VLO
+APA
+PTGX
+PBF
+DINO
+PSX
+ZETA
+ELF
+SN
+CRWD
+PANW
