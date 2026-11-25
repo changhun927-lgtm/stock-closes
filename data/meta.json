@@ -1,10 +1,8 @@
 {
- "updated_utc": "2026-11-25T22:34:59Z",
+ "updated_utc": "2026-11-25T22:53:20Z",
  "market_date": "2026-11-25",
  "market_final": 1,
  "tickers": 24,
- "ok": 23,
- "missing": [
-  "PTGX"
- ]
+ "ok": 24,
+ "missing": []
 }
