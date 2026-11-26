@@ -1,8 +1,10 @@
 {
- "updated_utc": "2026-11-26T21:57:59Z",
+ "updated_utc": "2026-11-26T22:36:56Z",
  "market_date": "2026-11-25",
  "market_final": 1,
  "tickers": 24,
- "ok": 24,
- "missing": []
+ "ok": 23,
+ "missing": [
+  "FRO"
+ ]
 }
