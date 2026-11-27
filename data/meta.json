@@ -1,8 +1,10 @@
 {
- "updated_utc": "2026-11-27T21:58:30Z",
+ "updated_utc": "2026-11-27T22:37:20Z",
  "market_date": "2026-11-27",
  "market_final": 1,
  "tickers": 24,
- "ok": 24,
- "missing": []
+ "ok": 23,
+ "missing": [
+  "ORCL"
+ ]
 }
